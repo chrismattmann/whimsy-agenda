@@ -127,6 +127,9 @@ class Report < React
         "please plan to report next month.\n\nThanks,\n\n " +
         "#{Server.username}\n\n" +
         "(on behalf of the ASF Board)"
+      datetime = Time.now.strftime("%F")
+      @@item.comments += "reminder sent - " + datetime
+	
     else
       subject = "#{@@item.title} Board Report"
       body = @@item.comments
